@@ -1,0 +1,85 @@
+html, body, div, span, iframe, h1, h2, h3, h4, h5, p, pre, em, img, strong, b, i, dl, dt, dd, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0
+}
+body {
+    font: 14px/1.5 'Microsoft Yahei', SimSun;
+    color: #7d6c68;
+}
+input{
+    display: inline-block;
+    outline: none;
+    border: 1px solid #c3c3c3;
+}
+a {
+    text-decoration: none;
+    color: #7d6c68;
+    &:hover{
+        text-decoration: none;
+        color: #f08200
+    }
+}
+// 盒子阴影函数
+.box-shadow(@x:0,@y:0,@blur:1px,@color:#000){
+    box-shadow: @arguments;//@arguments 包含了所有传入的参数，这种方法可以不用一个个写参数
+    -moz-box-shadow: @arguments;
+    -webkit-box-shadow: @arguments;
+}
+#canvas{
+    display: block;
+    .box-shadow(0,5px,40px,black);
+    position: absolute;
+    top: 50%;left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    overflow: hidden;
+}
+.hidebox{
+    display: flex;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    input{
+        cursor: pointer;
+        width: 160px;
+        height: 40px;
+        font-family: "微软雅黑";
+        font-size: 20px;
+        background: wheat;
+        border-radius: 6px;
+        &#again{
+            display: none;
+        }
+    }
+    .refrees{
+        display: none;
+        width: 100%;
+        line-height: 50px;
+        font-size: 18px;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        text-align: center;
+    }
+}
+.zhezhao{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity:0.5;
+    filter:alpha(opacity=50);
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
